@@ -1,0 +1,129 @@
+### Cloade Code Prompt
+
+
+# Project Setup Requirements
+Build this project as a modern Next.js application with the following specifications:
+
+## Tech Stack
+- **Framework**: Next.js 14+ (App Router)
+- **Styling**: Tailwind CSS
+- **Language**: TypeScript
+- **Deployment**: Vercel-ready
+
+## Project Structure
+```
+/app
+  /components      # Reusable UI components
+  /lib            # Utility functions, helpers
+  layout.tsx      # Root layout
+  page.tsx        # Home page
+  globals.css     # Global styles + Tailwind imports
+/public           # Static assets (images, icons)
+```
+
+## Core Requirements
+
+### Next.js Configuration
+- Use App Router (not Pages Router)
+- Server Components by default
+- Client Components only when needed (interactivity, hooks, browser APIs)
+- Implement proper metadata for SEO
+
+### Styling Guidelines
+- Tailwind CSS for all styling (no custom CSS unless absolutely necessary)
+- Responsive design: mobile-first approach
+- Use Tailwind's built-in color palette or define custom colors in tailwind.config
+- Consistent spacing using Tailwind's spacing scale
+- Dark mode support (optional but nice to have)
+
+### Data Management
+- Use localStorage for client-side data persistence
+- Use React hooks (useState, useEffect, useContext) for state management
+- For larger apps: Consider using Context API or Zustand for global state
+- No external database required unless specified
+
+### Component Architecture
+- Create reusable components in /components folder
+- Each component in its own file
+- Use TypeScript interfaces for props
+- Keep components small and focused (single responsibility)
+
+### Code Quality
+- Use TypeScript for type safety
+- Proper error handling
+- Loading states for async operations
+- Form validation where applicable
+- Accessible HTML (semantic markup, ARIA labels)
+
+### Performance
+- Optimize images using Next.js Image component
+- Code splitting where beneficial
+- Minimize client-side JavaScript
+
+### Deployment Preparation
+- Include all necessary configuration files
+- Environment variables template (.env.example) if needed
+- README with setup instructions
+- Vercel deployment should work out-of-the-box
+
+## File Structure to Generate
+1. `package.json` - Dependencies and scripts
+2. `next.config.js` - Next.js configuration
+3. `tailwind.config.ts` - Tailwind customization
+4. `tsconfig.json` - TypeScript configuration
+5. `app/layout.tsx` - Root layout with metadata
+6. `app/page.tsx` - Home page
+7. `app/globals.css` - Global styles
+8. Component files as needed
+9. `README.md` - Setup and usage instructions
+
+## Development Commands
+The project should support:
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+
+## Design Principles
+- Clean, modern UI
+- Intuitive user experience
+- Mobile-responsive
+- Fast and performant
+- Professional appearance
+
+---
+
+# Community Hub Platform
+
+A real-time messaging platform where people create and join themed communities called "servers." Each server contains multiple text and voice channels organized by topic. Users chat through text messages, share images and files, hop into voice calls, and stream their screens.
+
+Originally popular with gamers coordinating during matches, it's evolved into a hub for all kinds of communities - from study groups to hobbyist clubs to professional teams.
+
+## Features
+- Create and manage multiple servers (communities)
+- Organize servers with multiple text channels by topic
+- Real-time text messaging within channels
+- Custom emoji reactions and interactions
+- Customizable user roles and permissions
+- Server discovery and joining
+- User profiles with avatars and status
+- Threaded conversations for organized discussions
+- File and image sharing
+- Dark theme interface with modern aesthetics
+
+## Pages/Routes
+- `/` - Landing page with platform overview and server list
+- `/server/[id]` - Individual server view with channel sidebar
+- `/server/[id]/channel/[channelId]` - Specific channel conversation view
+- `/create-server` - Server creation flow
+- `/profile` - User profile and settings
+
+## Specific Requirements
+- **Server Sidebar**: Circular server icons in left sidebar for quick switching
+- **Channel Organization**: Collapsible channel categories within each server
+- **Message Features**: Support for text formatting, mentions (@username), and emoji reactions
+- **Real-time Simulation**: Use optimistic UI updates and localStorage to simulate real-time messaging
+- **Role System**: Different permission levels (Admin, Moderator, Member) with visual badges
+- **Responsive Design**: Mobile-friendly with collapsible sidebars
+- **Dark Mode**: Default dark theme with optional light mode toggle
+- **User State**: Track online/offline/away status with colored indicators
